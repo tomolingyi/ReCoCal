@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+.idea/
+.cadence/
+.vscode/
+.env
+.venv/
+.DS_Store
+results/
+datasets/
+checkpoint/
+*.pth
+*.pt
+*.bin
+*.safetensors
+*.tar
+*.zip

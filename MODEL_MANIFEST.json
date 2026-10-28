@@ -1,0 +1,43 @@
+{
+  "student_checkpoint_changes": "Removed machine-specific path metadata; every model tensor is unchanged.",
+  "metric_provenance": "Stored validation metadata from supplied checkpoints, not a new full-dataset evaluation.",
+  "models": [
+    {
+      "file": "c2d_256.pth",
+      "source_filename": "best_step_050000_pf1_69.59_iou_60.57.pth",
+      "tensor_count": 484,
+      "all_tensors_equal_to_original": true,
+      "global_step": 50000,
+      "input_size": 256,
+      "stored_validation_pixel_f1": 0.6958811315293191,
+      "stored_validation_pixel_iou": 0.6056931493393902,
+      "relative_path": "weights/c2d_256.pth",
+      "bytes": 117215031,
+      "sha256": "6a6f8606c7aa5fc50dfb014ac94d924cdafac782356377cd43ab2860f5b4b12a"
+    },
+    {
+      "file": "c2d_512.pth",
+      "source_filename": "best_step_058000_pf1_80.44_iou_72.44.pth",
+      "tensor_count": 484,
+      "all_tensors_equal_to_original": true,
+      "global_step": 58000,
+      "input_size": 512,
+      "stored_validation_pixel_f1": 0.8043758276606444,
+      "stored_validation_pixel_iou": 0.7243566828436626,
+      "relative_path": "weights/c2d_512.pth",
+      "bytes": 117215031,
+      "sha256": "f35a7f6c7c709f5bee59c6c541c0ce1ab967395566ac9b455211868fbdc18007"
+    },
+    {
+      "file": "clip_visual.pth",
+      "upstream_model": "timm/vit_large_patch14_clip_224.openai",
+      "upstream_revision": "18d0535469bb561bf468d76c1d73aa35156c922b",
+      "tensor_count": 295,
+      "all_tensors_equal_to_cached_vision_model": true,
+      "conversion": "timm native vision-only state dict; original float32 values retained",
+      "relative_path": "weights/clip_visual.pth",
+      "bytes": 1212831013,
+      "sha256": "36a45bd068e6fd97d2971d2713f632e96bab942c28a7c02f106e33bce87a8d02"
+    }
+  ]
+}

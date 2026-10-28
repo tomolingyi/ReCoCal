@@ -1,6 +1,6 @@
-# Model weights / 模型权重
+# ReCoCal model weights / ReCoCal 模型权重
 
-Download **C2Dweights** from [Baidu Netdisk / 百度网盘](https://pan.baidu.com/s/1JAV7ZbY1vyrR0dWVTV7tdw?pwd=6pxg).
+Download **ReCoCal demo weights** (shared folder / 共享文件夹：`C2Dweights`) from [Baidu Netdisk / 百度网盘](https://pan.baidu.com/s/1JAV7ZbY1vyrR0dWVTV7tdw?pwd=6pxg).
 
 Extraction code / 提取码：`6pxg`
 

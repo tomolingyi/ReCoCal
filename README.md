@@ -1,4 +1,8 @@
-# C2D
+# ReCoCal
+
+**Reference Comparison and Reliability Calibration for Image Forgery Localization**
+
+参考比较与可靠性校准的图像篡改定位。
 
 **Image forgery localization demo · 图像篡改定位演示**
 
@@ -8,15 +12,15 @@
 
 [English](#english) · [中文说明](#chinese) · [Paper figures / 论文配图](#figures) · [Weights / 模型权重](https://pan.baidu.com/s/1JAV7ZbY1vyrR0dWVTV7tdw?pwd=6pxg)
 
-This demo provides inference and visualization for the C2D localization model at 256 and 512 input resolutions. It includes the model implementation and a command-line visualization tool. Training code and the complete experimental workflow will accompany the full release after paper acceptance.
+This demo provides inference and visualization for the ReCoCal localization model at 256 and 512 input resolutions. It includes the model implementation and a command-line visualization tool. Training code and the complete experimental workflow will accompany the full release after paper acceptance.
 
-本 demo 提供 C2D 模型在 256 和 512 输入分辨率下的推理与可视化功能，包含模型实现和命令行可视化工具。训练代码及完整实验流程将在论文录用后的完整版中公开。
+本 demo 提供 ReCoCal 模型在 256 和 512 输入分辨率下的推理与可视化功能，包含模型实现和命令行可视化工具。训练代码及完整实验流程将在论文录用后的完整版中公开。
 
-![Figure 1. Overview of the C2D framework / 图1：C2D 整体框架](assets/figures/figure-1.png)
+![Figure 1. Overview of the ReCoCal framework / 图1：ReCoCal 整体框架](assets/figures/figure-1.png)
 
-**Figure 1. C2D framework.** A trainable MiT-B2 backbone and a frozen CLIP ViT-L/14 encoder supply visual and semantic representations. SCDV performs intra-image reference comparison and forgery verification, followed by reliability-aware local-global calibration (RLGC) and an F3-assisted progressive decoder. The output is a pixel-level forgery probability map; its maximum provides the image-level score.
+**Figure 1. ReCoCal framework.** A trainable MiT-B2 backbone and a frozen CLIP ViT-L/14 encoder supply visual and semantic representations. SCDV performs intra-image reference comparison and forgery verification, followed by reliability-aware local-global calibration (RLGC) and an F3-assisted progressive decoder. The output is a pixel-level forgery probability map; its maximum provides the image-level score.
 
-**图1：C2D 整体框架。** 可训练的 MiT-B2 主干与冻结的 CLIP ViT-L/14 编码器分别提供视觉和语义表征。SCDV 完成图内参考比较与伪造验证，随后通过可靠性感知的局部-全局校准（RLGC）及 F3 辅助渐进式解码器生成像素级伪造概率图，并以最大概率作为图像级分数。
+**图1：ReCoCal 整体框架。** 可训练的 MiT-B2 主干与冻结的 CLIP ViT-L/14 编码器分别提供视觉和语义表征。SCDV 完成图内参考比较与伪造验证，随后通过可靠性感知的局部-全局校准（RLGC）及 F3 辅助渐进式解码器生成像素级伪造概率图，并以最大概率作为图像级分数。
 
 <a id="english"></a>
 
@@ -39,7 +43,7 @@ python -m pip install torch==2.7.1 torchvision==0.22.1 --index-url https://downl
 
 ### 2. Download the model weights
 
-Download **C2Dweights** from [Baidu Netdisk](https://pan.baidu.com/s/1JAV7ZbY1vyrR0dWVTV7tdw?pwd=6pxg). **Extraction code: `6pxg`.**
+Download the **ReCoCal demo weights** (shared folder: `C2Dweights`) from [Baidu Netdisk](https://pan.baidu.com/s/1JAV7ZbY1vyrR0dWVTV7tdw?pwd=6pxg). **Extraction code: `6pxg`.**
 
 Copy the three checkpoints into `weights/`. If the download has an outer `C2Dweights` directory, copy the files inside it into `weights/`; keep the filenames below unchanged.
 
@@ -99,7 +103,7 @@ Figures are written into a separate subdirectory for each image. Probability map
 ### 5. Repository contents
 
 ```text
-C2D/
+ReCoCal/
 ├── README.md
 ├── visualize.py
 ├── config.py
@@ -138,7 +142,7 @@ python -m pip install torch==2.7.1 torchvision==0.22.1 --index-url https://downl
 
 ### 2. 下载并放置权重
 
-通过百度网盘下载 **C2Dweights**：[下载链接](https://pan.baidu.com/s/1JAV7ZbY1vyrR0dWVTV7tdw?pwd=6pxg)。**提取码：`6pxg`。**
+通过百度网盘下载 **ReCoCal demo 权重**（共享文件夹名为 `C2Dweights`）：[下载链接](https://pan.baidu.com/s/1JAV7ZbY1vyrR0dWVTV7tdw?pwd=6pxg)。**提取码：`6pxg`。**
 
 将三个权重文件放入仓库的 `weights/` 目录。如果解压后的外层文件夹名为 `C2Dweights`，请将其中的权重文件复制到 `weights/`，并保持下面的文件名：
 
@@ -245,6 +249,6 @@ The following figures retain their paper numbering. They illustrate the method a
 
 ![Figure 8. Gaussian blur and JPEG compression results / 图8：高斯模糊与 JPEG 压缩结果](assets/figures/figure-8.png)
 
-**Figure 8. Gaussian blur and JPEG compression results.** Pixel F1 curves are reported on SD1.5 and SD3 under the blur levels and JPEG quality settings shown on the horizontal axes. The curves include the 256/512 C2D variants, labeled Ours-256/Ours-512, and the comparison methods listed in the legend.
+**Figure 8. Gaussian blur and JPEG compression results.** Pixel F1 curves are reported on SD1.5 and SD3 under the blur levels and JPEG quality settings shown on the horizontal axes. The curves include the 256/512 ReCoCal variants, labeled Ours-256/Ours-512, and the comparison methods listed in the legend.
 
-**图8：高斯模糊与 JPEG 压缩结果。** 展示 SD1.5 和 SD3 在图中指定模糊等级、JPEG 质量设置下的 Pixel F1 曲线。曲线包含 C2D 的 256/512 版本（图例为 Ours-256、Ours-512）以及图例中列出的对比方法。
+**图8：高斯模糊与 JPEG 压缩结果。** 展示 SD1.5 和 SD3 在图中指定模糊等级、JPEG 质量设置下的 Pixel F1 曲线。曲线包含 ReCoCal 的 256/512 版本（图例为 Ours-256、Ours-512）以及图例中列出的对比方法。
